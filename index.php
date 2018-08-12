@@ -9,16 +9,11 @@ function addition($num1, $num2) {
 		$max = strrev($num2); $min = strrev($num1);
 	}
 
-	//var_dump(['max, min', $max, $min]);
-	
 	// считаем "столбиком"
 	$summ = '';
 	$transfer = 0;
 	for($i = 0; $i < strlen($max); $i++) {
-		//var_dump([$max[$i], $min[$i]]);
 		$step = ($max[$i]) + ($min[$i]?:0) + $transfer;
-		//var_dump($transfer);
-		//var_dump($step);
 		$transfer = 0;
 		if ($step >= 10) {
 			$step -= 10;
